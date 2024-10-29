@@ -1,0 +1,141 @@
+
+.card {
+  width: 650px;
+  height: 700px;
+  position: absolute;
+  margin: auto;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  -webkit-perspective: 1100px;
+  perspective: 1100px;
+  transition: 1s;
+}
+.card:hover {
+  transform: rotate(-5deg);
+}
+.card:hover .outside {
+  transform: rotateY(-130deg);
+}
+.outside,
+.inside {
+  height: 100%;
+  width: 50%;
+
+  background: #121212;
+  position: absolute;
+  border: 2px dashed #fff;
+  left: 50.1%;
+}
+.inside {
+  line-height: 3;
+  padding: 0 20px;
+  width: 63%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  border: 2px dashed #fff;
+  justify-content: space-around;
+  align-items: center;
+  left: 50%;
+}
+.outside {
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  z-index: 1;
+  transform-origin: left;
+  transition: 2s;
+
+  width: 75%;
+  cursor: pointer;
+}
+.front,
+.back {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  transform: rotateX(0deg);
+}
+.front {
+  background-color: #121212;
+
+}
+.front p{
+  font-family: "Henny Penny", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+.front img{
+  width: 60%;
+}
+
+
+.back {
+  transform: rotateY(180deg);
+}
+.outside p {
+  font-size: 23px;
+  text-transform: uppercase;
+  margin-top: 30px;
+  text-align: center;
+  letter-spacing: 6px;
+}
+.inside h1 {
+  font-size: 120px;
+  line-height: 120px;
+}
+
+
+.front .content,.inside .content{
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.front .content p,.inside .content p{
+  color: white;
+  font-family: "Mystery Quest", system-ui;
+  font-weight: 400;
+  font-style: normal;
+
+}
+
+.inside .content p span:first-child{
+  color: #ff8833;
+  font-weight: 900;
+  font-size: 35px;
+}
+
+.inside .content p span:last-child{
+  font-weight: 900;
+  font-size: 30px;
+}
+
+.halloween-button {
+  background-color: #ff7518; /* Pumpkin orange */
+  color: #fff; /* White text */
+  font-size: 1em;
+  padding: 10px 10px;
+  border: 3px solid #000; /* Black border */
+  border-radius: 10px;
+  cursor: pointer;
+  box-shadow: 0 0 10px #000;
+  text-transform: uppercase;
+  transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.halloween-button:hover {
+  background-color: #ff5200; /* Darker orange */
+  box-shadow: 0 0 20px #ff7518; /* Glowing effect on hover */
+}
+
+.halloween-button:active {
+  transform: translateY(3px);
+  box-shadow: 0 0 5px #000;
+}
